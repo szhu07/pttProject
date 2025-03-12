@@ -92,7 +92,7 @@ void loop() {
         
         // Range check for valid PTT and check if 5 seconds have passed
         unsigned long currentTime = millis();
-        if ((currentTime - lastReadingTime >= READING_INTERVAL) && (PTT >= 10 && PTT <= 150)) {
+        if ((currentTime - lastReadingTime >= READING_INTERVAL) && (PTT >= 10 && PTT <= 200)) {
           // Update last reading time
           lastReadingTime = currentTime;
           
@@ -124,7 +124,7 @@ void loop() {
           Serial.print("/");
           Serial.print(diastolicBP, 1);
           Serial.println(" mmHg");
-        } else if (PTT >= 10 && PTT <= 150) {
+        } else if (PTT >= 10 && PTT <= 200) {
           // Show PTT even if we're not updating the LCD yet
           Serial.print("PTT: ");
           Serial.print(PTT);
